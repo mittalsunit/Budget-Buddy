@@ -1,1 +1,3 @@
-# Budget-Buddy
+Budget Buddy is a simple and efficient tool designed to help you keep track of all your income and expenses. Built using HTML, CSS, JavaScript, MongoDB, and Node.js, this web application allows you to manage your finances effortlessly.
+With Budget Buddy, you can easily input your income and expenses, categorize them, and keep a clear record of your financial activities. The app dynamically updates your total balance, giving you a real-time view of your financial status.
+Whether you're managing daily expenses or tracking multiple income sources, Budget Buddy provides a user-friendly interface that makes it easy to stay on top of your budget.
