@@ -1,56 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
     <title>Budget Buddy</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Budget Buddy</h1>
+
+    <!-- Theme Toggle Switch -->
+    <label class="switch">
+      <input type="checkbox" id="themeToggle" />
+      <span class="slider"></span>
+    </label>
+
     <form id="money-tracker-form">
-        <div class="input-section" style="align-items: center;">
-            <input type="hidden" id="entry_id">
-            <label for="category_select">Category: </label>
-            <select id="category_select" name="category_select">
-                <option value="Expense">Expense</option>
-                <option value="Income">Income</option>
-            </select>
-            <label for="amount_input">Amount:</label>
-            <input type="number" id="amount_input" name="amount_input">
-            <label for="info">Info:</label>
-            <input type="text" id="info" name="info">
-            <label for="date_input">Date:</label>
-            <input type="date" id="date_input" name="date_input">
-            <button id="add_btn">Add</button>
-        </div>
+      <div class="input-section animate__animated animate__bounce">
+        <input type="hidden" id="entry_id" />
+        <label for="category_select">Category: </label>
+        <select id="category_select" name="category_select">
+          <option value="Expense">Expense</option>
+          <option value="Income">Income</option>
+        </select>
+        <label for="amount_input">Amount:</label>
+        <input type="number" id="amount_input" name="amount_input" />
+        <label for="info">Info:</label>
+        <input type="text" id="info" name="info" />
+        <label for="date_input">Date:</label>
+        <input type="date" id="date_input" name="date_input" />
+        <button id="add_btn">Add</button>
+      </div>
     </form>
 
-    <div class="expenses-list">
-        <h2>Earning & Spending Breakdown</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Category</th>
-                    <th>Amount</th>
-                    <th>Info</th>
-                    <th>Date</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
-                </tr>
-            </thead>
-            <tbody id="expense-table-body">
-                <!-- Entries will be added here dynamically -->
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td>Total:</td>
-                    <td id="total-amount">0</td>
-                    <td colspan="4"></td>
-                </tr>
-            </tfoot>
-        </table>
+    <div class="expenses-list animate__animated animate__fadeInUp">
+      <h1>Earning & Spending Breakdown</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Amount</th>
+            <th>Info</th>
+            <th>Date</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody id="expense-table-body">
+          <!-- Entries will be added here dynamically -->
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>Total:</td>
+            <td id="total-amount">0</td>
+            <td colspan="4"></td>
+          </tr>
+        </tfoot>
+      </table>
     </div>
+
+    <div class="chart-container">
+      <canvas id="expenseChart"></canvas>
+    </div>
+
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
